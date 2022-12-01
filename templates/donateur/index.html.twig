@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DonateurController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/DonateurController.php'|file_link(0) }}">src/Controller/DonateurController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/donateur/index.html.twig'|file_link(0) }}">templates/donateur/index.html.twig</a></code></li>
+    </ul> #}
+
+    <ul>
+        {% for don in dons %}
+            <li>Donateur : {{don.donateur.personne}}</li>
+            <ul>
+                <li>{{don.donateur.personne.email}}</li>
+                <li>{{don.donateur.personne.telephone}}</li>
+                <li>{{don.donateur.personne.pays}}</li>
+                <li>{{don.donateur.personne.ville}}</li>
+                <li>{{don.date|date('d-m-Y')}}</li>
+                <li>{{don.typePaiement}}</li>
+                <li>{{don.valeur}}</li>
+            </ul>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details d'activité</title>
+</head>
+<body>
+    <h1>{{ activite.intitule}}</h1>
+    <h2>{{ activite.debut|date('d/m/Y')}} - {% if activite.statut %}{{activite.finReel|date('d/m/Y')}} Terminée{% else %}{{activite.fin|date('d/m/Y')}} Non terminée{% endif %}</h2>
+
+    <h3>Liste des images</h3>
+    <ul>
+        {% for docu in documents %}
+            <li>{{docu.url}} <a href="{{url('DeleteActiviteDocument' , {ida : activite.id, idd : docu.id})}}"><button>Supprimer</button></a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddActiviteDocument', {id : activite.id})}}"><button>Ajouter une image</button></a>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae eos ex velit necessitatibus fugit, vero aut sit sapiente animi natus nostrum laudantium perferendis reprehenderit temporibus harum alias quod impedit magni?</p>
+
+</body>
+</html>

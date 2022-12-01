@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NewsletterController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/NewsletterController.php'|file_link(0) }}">src/Controller/NewsletterController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/newsletter/index.html.twig'|file_link(0) }}">templates/newsletter/index.html.twig</a></code></li>
+    </ul> #}
+
+    <h2>Newsletter</h2>
+
+    <ul>
+        {% for news in newsletters %}
+            <li>Newsletter N°{{news.id}} <a href="{{url('UpdateNewsletter', {id : news.id})}}"><button>Modifier</button></a> <a href="{{url('DeleteNewsletter', {id : news.id})}}"><button>Supprimer</button></a></li>
+            <ul>
+                <li>{{news.personne.nom}}</li>                      
+                <li>{{news.personne.prenom}}</li>                      
+                <li>{{news.personne.email}}</li>                      
+                <li>{{news.personne.telephone}}</li>                      
+                <li>{{news.personne.pays}}</li>                      
+                <li>{{news.personne.ville}}</li>
+                <li>{{news.personne.commentaire}}</li>
+            </ul>
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddNewsletter')}}"><button>Ajouter</button></a>
+</div>
+{% endblock %}

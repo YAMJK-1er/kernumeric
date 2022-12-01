@@ -1,0 +1,307 @@
+---------------------------CRUD Activite---------------------------
+
+Create
+	Route : apis/activites
+	Name : APICreateActivite
+	Method : POST
+
+Read
+	Read all
+		Route : apis/activites
+		Name : APIGetAllActivites
+		Method : GET
+
+	Read one
+		Route : apis/activites/{id}
+		Name : APIGetActivites
+		Method : GET
+
+Update
+	Route : apis/activites/{id}
+	Name : APIUpadateActivite
+	Method : PUT
+
+Delete
+	Route : apis/activites/{id}
+	Name : APIDeleteActivite
+	Method : DEL
+
+---------------------------CRUD Adherent---------------------------
+
+Create
+	Route : apis/adherents
+	Name : APICreateAdherents
+	Method : POST
+
+Read
+	Read all
+		Route : apis/adherents
+		Name : APIGetAllAdherents
+		Method : GET
+
+	Read one
+		Route : apis/adherents/{id}
+		Name : APIGetAdherent
+		Method : GET
+
+Update
+	Route : apis/adherents/{id}
+	Name : APIUpadateAdherent
+	Method : PUT
+
+Delete
+	Route : apis/adherents/{id}
+	Name : APIDeleteAdherent
+	Method : DEL
+
+---------------------------CRUD Association---------------------------
+
+Create
+	Route : apis/associations
+	Name : APICreateAssociation
+	Method : POST
+
+Read
+	Route : apis/associations
+	Name : APIGetAssociation
+	Method : GET
+
+Update
+	Route : apis/associations
+	Name : APIUpadateAssociation
+	Method : PUT
+
+---------------------------CRUD Contact---------------------------
+
+Create
+	Route : apis/contacts
+	Name : APICreateContact
+	Method : POST
+
+Read
+	Read all
+		Route : apis/contacts
+		Name : APIGetAllContacts
+		Method : GET
+
+	Read one
+		Route : apis/contacts/{id}
+		Name : APIGetContact
+		Method : GET
+
+Update
+	Route : apis/contacts/{id}
+	Name : APIUpadateContact
+	Method : PUT
+
+Delete
+	Route : apis/contacts/{id}
+	Name : APIDeleteContact
+	Method : DEL
+
+---------------------------CRUD Donateur---------------------------
+
+Create
+	Route : apis/donateurs
+	Name : APICreateDonateur
+	Method : POST
+
+Read
+	Read all
+		Route : apis/donateurs
+		Name : APIGetAllDonateurs
+		Method : GET
+
+	Read one
+		Route : apis/donateurs/{id}
+		Name : APIGetDonateur
+		Method : GET
+
+Update
+	Route : apis/donateurs/{id}
+	Name : APIUpadateDonateur
+	Method : PUT
+
+Delete
+	Route : apis/donateurs/{id}
+	Name : APIDeleteDonateur
+	Method : DEL
+
+---------------------------CRUD Membre---------------------------
+
+Create
+	Route : apis/membres
+	Name : APICreateMembre
+	Method : POST
+
+Read
+	Read all
+		Route : apis/membres
+		Name : APIGetAllMembres
+		Method : GET
+
+	Read one
+		Route : apis/membres/{id}
+		Name : APIGetMembre
+		Method : GET
+
+Update
+	Route : apis/membres/{id}
+	Name : APIUpadateMembre
+	Method : PUT
+
+Delete
+	Route : apis/membres/{id}
+	Name : APIDeleteMembre
+	Method : DEL
+
+---------------------------CRUD Message---------------------------
+
+Create
+	Route : apis/messages
+	Name : APICreateMessage
+	Method : POST
+
+Read
+	Read all
+		Route : apis/messages
+		Name : APIGetAllMessages
+		Method : GET
+
+	Read one
+		Route : apis/messages/{id}
+		Name : APIGetMessage
+		Method : GET
+
+Update
+	Route : apis/messages/{id}
+	Name : APIUpadateMessage
+	Method : PUT
+
+Delete
+	Route : apis/messages/{id}
+	Name : APIDeleteMessage
+	Method : DEL
+
+---------------------------CRUD Newsletter---------------------------
+
+Create
+	Route : apis/newsletters
+	Name : APICreateNewsletter
+	Method : POST
+
+Read
+	Read all
+		Route : apis/newsletters
+		Name : APIGetAllNewsletters
+		Method : GET
+
+	Read one
+		Route : apis/newsletters/{id}
+		Name : APIGetNewsletter
+		Method : GET
+
+Update
+	Route : apis/newsletters/{id}
+	Name : APIUpadateNewsletter
+	Method : PUT
+
+Delete
+	Route : apis/newsletters/{id}
+	Name : APIDeleteNewsletter
+	Method : DEL
+
+---------------------------CRUD Partenaire---------------------------
+
+Create
+	Route : apis/partenaires
+	Name : APICreatePartenaire
+	Method : POST
+
+Read
+	Read all
+		Route : apis/partenaires
+		Name : APIGetAllPartenaires
+		Method : GET
+
+	Read one
+		Route : apis/partenaires/{id}
+		Name : APIGetPartenaire
+		Method : GET
+
+Update
+	Route : apis/partenaires/{id}
+	Name : APIUpadatePartenaire
+	Method : PUT
+
+Delete
+	Route : apis/partenaires/{id}
+	Name : APIDeletePartenaire
+	Method : DEL
+
+<<<<<<< HEAD
+=======
+
+-------------------------Documents d'activités--------------------------
+
+Create
+	Route : apis/activites/{id}/documents
+	Name : APICreateActiviteDocument
+	Method : POST
+
+Delete
+	Route : apis/activites/{ida}/documents/{idd}
+	Name : APIDeleteActiviteDocument
+	Method : DEL
+
+
+-------------------------Documents d'associations--------------------------
+
+Create
+	Route : apis/associations/documents
+	Name : APICreateAssociationDocument
+	Method : POST
+
+Delete
+	Route : apis/associations/documents/{idd}
+	Name : APIDeleteAssociationDocument
+	Method : DEL
+
+
+-------------------------Documents de membres--------------------------
+
+Create
+	Route : apis/membres/{id}/documents
+	Name : APICreateMembreDocument
+	Method : POST
+
+Delete
+	Route : apis/membres/{idm}/documents/{idd}
+	Name : APIDeleteMembreDocument
+	Method : DEL
+
+
+-------------------------Documents de messages--------------------------
+
+Create
+	Route : apis/messages/{id}/documents
+	Name : APICreateMessageDocument
+	Method : POST
+
+Delete
+	Route : apis/messages/{ida}/documents/{idd}
+	Name : APIDeleteMessageDocument
+	Method : DEL
+
+-------------------------Documents de partenaires--------------------------
+
+Create
+	Route : apis/partenaires/{id}/documents
+	Name : APICreatePartenaireDocument
+	Method : POST
+
+Delete
+	Route : apis/partenaires/{ida}/documents/{idd}
+	Name : APIDeletePartenaireDocument
+	Method : DEL
+>>>>>>> 6966214db6e58f190a5012d29a265a5e34128bc8

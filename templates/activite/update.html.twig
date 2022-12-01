@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mise à jour d'activité</title>
+</head>
+<body>
+    {{ form_start(form) }}
+        {{ form_row(form.intitule) }}
+
+        {{ form_row(form.debut) }}
+
+        {{ form_row(form.finReel) }}
+
+        <input type="submit" value="Update">
+    {{ form_end(form) }}
+</body>
+</html>

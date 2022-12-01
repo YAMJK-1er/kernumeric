@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
+    </ul> #}
+
+    <h2>Listed des contacts</h2>
+
+    <ul>
+        {% for contact in contacts %}
+            <li>Contact N°{{contact.id}} <a href="{{url('UpdateContact' , {id : contact.id})}}">Modifier</a> <a href="{{url('DeleteContact' , {id : contact.id})}}">Supprimer</a></li>
+            <ul>
+                <li>{{contact.personne.nom}}</li>                      
+                <li>{{contact.personne.prenom}}</li>                      
+                <li>{{contact.personne.email}}</li>                      
+                <li>{{contact.personne.telephone}}</li>                      
+                <li>{{contact.personne.pays}}</li>                      
+                <li>{{contact.personne.ville}}</li>
+                <li>{{contact.personne.commentaire}}</li>
+            </ul>                     
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddContact')}}"><button>Ajouter</button></a>
+</div>
+{% endblock %}

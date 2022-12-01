@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MissionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/MissionController.php'|file_link(0) }}">src/Controller/MissionController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/mission/index.html.twig'|file_link(0) }}">templates/mission/index.html.twig</a></code></li>
+    </ul> #}
+
+    <h2>Liste des missions</h2>
+
+    <ul>
+        {% for mission in missions %}
+            <li>{{mission.titre}} <a href="{{url('UpdateMission', {id : mission.id})}}"><button>Modifier</button></a> <a href="{{url('DeleteMission', {id : mission.id})}}"><button>Supprimer</button></a></li>
+
+            <ul>
+                <li>{{mission.description}}</li>
+                <li>Listes des documents</li>
+                <ul>
+                    {% for docu in mission.documents %}
+                        <li>{{docu.url}} <a href="{{url('DeleteMissionDocument', {id : docu.id})}}"><button>Supprimer</button></a></li>
+                    {% endfor %}
+
+                    <a href="{{url('AddMissionDocument', {id : mission.id})}}"><button>Ajouter un document</button></a>
+                </ul>
+            </ul>
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddMission')}}"><button>Ajouter</button></a>
+</div>
+{% endblock %}

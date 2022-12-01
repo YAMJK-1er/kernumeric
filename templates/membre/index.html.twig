@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MembreController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/MembreController.php'|file_link(0) }}">src/Controller/MembreController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/membre/index.html.twig'|file_link(0) }}">templates/membre/index.html.twig</a></code></li>
+    </ul> #}
+
+    <h2>Liste des membres</h2>
+
+    <ul>
+        {% for membre in membres %}
+            <li>{{membre}} -- {{membre.poste}} <a href="{{url('UpdateMembre' , {id : membre.id})}}"><button>Modifier</button></a> <a href="{{url('DeleteMembre' , {id : membre.id})}}"><button>Supprimer</button></a></li>
+            <ul>
+                <li>{{membre.personne.email}}</li>
+                <li>{{membre.personne.telephone}}</li>
+                <li>{{membre.personne.pays}}</li>
+                <li>{{membre.personne.ville}}</li>
+                <li>{{membre.personne.commentaire}}</li>
+                <li>Listes des documents</li>
+                <ul>
+                    {% for docu in membre.documents %}
+                        <li>{{docu.url}} <a href="{{url('DeleteMembreDocument', {id : docu.id})}}"><button>Supprimer</button></a></li>
+                    {% endfor %}
+
+                    <a href="{{url('AddMembreDocument', {idm : membre.id})}}"><button>Ajouter un document</button></a>
+                </ul>
+            </ul>
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddMembre')}}"><button>Ajouter</button></a>
+</div>
+{% endblock %}

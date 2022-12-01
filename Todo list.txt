@@ -1,0 +1,16 @@
+Lancer le serveur
+symfony server:start -d
+
+
+Créer la base de données
+symfony console doctrine:database:create
+
+
+Effectuer des migrations
+symfony console make:migration
+-----
+symfony console doctrine:migrations:diff
+
+
+Migrer les migrations vers la base de données
+symfony console doctrine:migrations:migrate

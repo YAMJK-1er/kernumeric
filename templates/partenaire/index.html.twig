@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PartenaireController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/src/Controller/PartenaireController.php'|file_link(0) }}">src/Controller/PartenaireController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/YAMJK 1er/Desktop/Projets/Kernumeric/Kernumeric/Code/Kernumeric/templates/partenaire/index.html.twig'|file_link(0) }}">templates/partenaire/index.html.twig</a></code></li>
+    </ul> #}
+
+    <h2>Listes des partenaires</h2>
+
+        <ul>
+        {% for part in partenaires %}
+            <li>Partenaire N°{{part.id}}
+            <a href="{{url('UpdatePartenaire' , {id : part.id})}}"><button>Modifier</button></a> <a href="{{url('DeletePartenaire' , {id : part.id})}}"><button>Supprimer</button></a>
+            </li>
+            <ul>
+                <li>{{part.personne.nom}}</li>                      
+                <li>{{part.personne.prenom}}</li>                      
+                <li>{{part.personne.email}}</li>                      
+                <li>{{part.personne.telephone}}</li>                      
+                <li>{{part.personne.pays}}</li>                      
+                <li>{{part.personne.ville}}</li>
+                <li>{{part.urlSite}}</li>
+                <li>{{part.personne.commentaire}}</li>
+                <li>Liste des documents</li>
+                <ul>
+                    {% for docu in part.documents %}
+                        <li>{{docu.url}} <a href="{{url('DeletePartenaireDocument', {id : docu.id})}}"><button>Supprimer</button></a></li>
+                    {% endfor %}
+
+                    <a href="{{url('AddPartenaireDocument', {idp : part.id})}}"><button>Ajouter un document</button></a>
+                </ul>
+            </ul>                     
+        {% endfor %}
+    </ul>
+
+    <a href="{{url('AddPartenaire')}}"><button>Ajouter</button></a>
+</div>
+{% endblock %}
